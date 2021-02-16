@@ -22,4 +22,14 @@ fun main() {
         "Hi, meow",
         likes = Likes()
     )
+
+    println(WallService.add(firstPost))
+    println(WallService.add(secondPost))
+    println(WallService.add(thirdPost))
+
+
+    val updatePost = Post(2,3,4,"Hi", Likes())
+
+    WallService.update(updatePost)
+
 }
