@@ -1,10 +1,10 @@
 object WallService {
-    private var posts = emptyArray<Post>()
+    private var posts = ArrayList<Post>()
     private var previousId = 0
 
     fun add(post: Post) : Post {
         val newPost = post.copy(id = previousId + 1)
-        posts += newPost
+        posts.add(newPost)
         previousId++
         return posts.last()
     }
@@ -18,5 +18,20 @@ object WallService {
         }
 
         return false
+    }
+
+    fun remove(post : Post) : Boolean {
+        for((index, currentPost) in posts.withIndex()) {
+            if (post.id == currentPost.id) {
+                posts.remove(post)
+                return true
+            }
+        }
+
+        return false
+    }
+
+    fun returnPosts() : ArrayList<Post> {
+        return posts
     }
 }

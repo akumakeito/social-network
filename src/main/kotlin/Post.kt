@@ -2,10 +2,10 @@ import java.util.*
 
 data class Post(
     val id : Int,
-    val ownerId : Int,
-    val date : Int,
-    val text : String,
-    val likes: Likes,
+    val ownerId : Int = 0,
+    val date : Int = 0,
+    val text : String = "",
+    val likes: Likes = Likes(),
 //    val fromId : Int,
 //    val createdBy : Int,
 //    val replyOwnerId : Int,
