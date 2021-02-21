@@ -1,7 +1,9 @@
+import Enums.EditModeEnum
+
 data class Donut(
-    val isDonut: Boolean,
+    val isDonut: Boolean?,
     val paidDuration : Int,
-    val placeholder : String,
+    val placeholder : String?,
     val canPublishFreeCopy : Boolean,
-    val editMode : String
+    val editMode : EditModeEnum
 )

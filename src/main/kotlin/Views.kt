@@ -1,3 +1,3 @@
 data class Views(
-    val count : Int
+    val count : Int?
 )
