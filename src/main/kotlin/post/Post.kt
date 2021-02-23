@@ -1,3 +1,6 @@
+package Post
+
+import Attachment
 import Enums.PostTypeEnum
 
 data class Post(
@@ -8,6 +11,7 @@ data class Post(
     val fromId : Int = 0,
     val postType : PostTypeEnum,
     val postSource : PostSource,
+    val attachment: Attachment? = null,
     val likes: Likes? = null,
     val createdBy : Int? = null,
     val replyOwnerId : Int? = null,

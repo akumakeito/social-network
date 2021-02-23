@@ -1,3 +1,5 @@
+package Post
+
 import Enums.PlatformEnum
 import Enums.PostSourceTypeEnum
 
