@@ -1,3 +1,5 @@
+package Post
+
 data class Comment(
     val count: Int = 0,
     val canPost: Boolean,
