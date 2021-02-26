@@ -1,10 +1,15 @@
+import Enums.PlatformEnum
+import Enums.PostSourceTypeEnum
+import Enums.PostTypeEnum
+
 fun main() {
     val firstPost = Post(
         0,
         1,
         120221,
         "Hola, Sinora",
-        likes = Likes()
+        postType = PostTypeEnum.POST,
+        postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
     )
 
     val secondPost = Post(
@@ -12,7 +17,8 @@ fun main() {
         2,
         120221,
         "Hello, madam",
-        likes = Likes()
+        postType = PostTypeEnum.POST,
+        postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
     )
 
     val thirdPost = Post(
@@ -20,7 +26,8 @@ fun main() {
         3,
         140221,
         "Hi, meow",
-        likes = Likes()
+        postType = PostTypeEnum.POST,
+        postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
     )
 
     println(WallService.add(firstPost))
@@ -28,7 +35,9 @@ fun main() {
     println(WallService.add(thirdPost))
 
 
-    val updatePost = Post(2,3,4,"Hi", Likes())
+    val updatePost = Post(2,3,4,"Hi",postType = PostTypeEnum.POST,
+        postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
+    )
 
     WallService.update(updatePost)
 

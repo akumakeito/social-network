@@ -1,3 +1,6 @@
+import Enums.PlatformEnum
+import Enums.PostSourceTypeEnum
+import Enums.PostTypeEnum
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -10,7 +13,8 @@ class WallServiceTest {
             ownerId = 1,
             date = 15022021,
             text = "Hi, Lily",
-            likes = Likes(count = 3)
+            postType = PostTypeEnum.POST,
+            postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
         )
 
         val result = WallService.add(post)
@@ -25,7 +29,8 @@ class WallServiceTest {
             ownerId = 1,
             date = 15022021,
             text = "Hi, dad",
-            likes = Likes(count = 3)
+            postType = PostTypeEnum.POST,
+            postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
         )
 
         val post2 = Post(
@@ -33,12 +38,23 @@ class WallServiceTest {
             ownerId = 2,
             date = 15022021,
             text = "Hi, mom",
-            likes = Likes(count = 3)
+            postType = PostTypeEnum.POST,
+            postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
+
         )
         WallService.add(post1)
         WallService.add(post2)
 
-        assertTrue(WallService.remove(Post(2)))
+        assertTrue(
+            WallService.remove(
+                Post(
+                    id = 2,
+                    ownerId = 2,
+                    postType = PostTypeEnum.POST,
+                    postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
+                )
+            )
+        )
     }
 
     @Test
@@ -48,7 +64,9 @@ class WallServiceTest {
             ownerId = 1,
             date = 15022021,
             text = "Hi, dad",
-            likes = Likes(count = 3)
+            postType = PostTypeEnum.POST,
+            postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
+
         )
 
         val post2 = Post(
@@ -56,11 +74,21 @@ class WallServiceTest {
             ownerId = 2,
             date = 15022021,
             text = "Hi, mom",
-            likes = Likes(count = 3)
+            postType = PostTypeEnum.POST,
+            postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
         )
         WallService.add(post1)
         WallService.add(post2)
 
-        assertFalse(WallService.remove(Post(4)))
+        assertFalse(
+            WallService.remove(
+                Post(
+                    id = 4,
+                    ownerId = 2,
+                    postType = PostTypeEnum.POST,
+                    postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
+                )
+            )
+        )
     }
 }
