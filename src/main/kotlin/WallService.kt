@@ -1,3 +1,5 @@
+import Post.Post
+
 object WallService {
     private var posts = ArrayList<Post>()
     private var previousId = 0

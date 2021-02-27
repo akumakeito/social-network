@@ -6,7 +6,6 @@ data class Doc(
     val ext : String,
     val url : String,
     val date : Int,
-    val type : Int,
-    val preview : Preview
+    val type : Int
 
 )
