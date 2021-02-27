@@ -1,4 +1,4 @@
-import Enums.AttachmentTypeEnum
+import enums.AttachmentTypeEnum
 
 class VideoAttachment (
     override val type: AttachmentTypeEnum = AttachmentTypeEnum.VIDEO,

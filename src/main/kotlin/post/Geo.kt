@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Geo(
     val type : String,

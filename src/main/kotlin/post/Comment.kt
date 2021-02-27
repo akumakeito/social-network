@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Comment(
     val count: Int = 0,

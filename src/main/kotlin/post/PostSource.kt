@@ -1,7 +1,7 @@
-package Post
+package post
 
-import Enums.PlatformEnum
-import Enums.PostSourceTypeEnum
+import enums.PlatformEnum
+import enums.PostSourceTypeEnum
 
 data class PostSource(
     val type : PostSourceTypeEnum,

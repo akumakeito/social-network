@@ -1,6 +1,8 @@
-import Enums.PlatformEnum
-import Enums.PostSourceTypeEnum
-import Enums.PostTypeEnum
+import enums.PlatformEnum
+import enums.PostSourceTypeEnum
+import enums.PostTypeEnum
+import post.Post
+import post.PostSource
 import org.junit.Assert.*
 import org.junit.Test
 

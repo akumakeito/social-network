@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Views(
     val count : Int?

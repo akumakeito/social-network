@@ -1,8 +1,8 @@
-import Enums.PlatformEnum
-import Enums.PostSourceTypeEnum
-import Enums.PostTypeEnum
-import Post.Post
-import Post.PostSource
+import enums.PlatformEnum
+import enums.PostSourceTypeEnum
+import enums.PostTypeEnum
+import post.Post
+import post.PostSource
 
 fun main() {
     val firstPost = Post(

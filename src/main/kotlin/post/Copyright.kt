@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Copyright(
     val id : Int,

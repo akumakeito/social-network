@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Place (
     val id : Int,

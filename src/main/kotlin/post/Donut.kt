@@ -1,6 +1,6 @@
-package Post
+package post
 
-import Enums.EditModeEnum
+import enums.EditModeEnum
 
 data class Donut(
     val isDonut: Boolean?,

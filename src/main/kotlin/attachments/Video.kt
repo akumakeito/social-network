@@ -1,6 +1,5 @@
-import Post.Likes
-import Post.Reposts
-import javax.xml.stream.events.Comment
+import post.Likes
+import post.Reposts
 
 data class Video (
     val id : Int,

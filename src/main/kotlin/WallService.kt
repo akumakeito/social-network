@@ -1,4 +1,4 @@
-import Post.Post
+import post.Post
 
 object WallService {
     private var posts = ArrayList<Post>()

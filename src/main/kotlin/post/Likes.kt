@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Likes(
     val count : Int = 0,

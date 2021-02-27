@@ -1,4 +1,4 @@
-package Post
+package post
 
 data class Reposts(
     val count : Int = 0,
