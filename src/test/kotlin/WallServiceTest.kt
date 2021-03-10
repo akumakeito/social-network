@@ -111,11 +111,9 @@ class WallServiceTest {
 
     @Test(expected = PostNotFoundException::class)
     fun createComment_shouldThrow() {
-        val comment = Comment(1,1,1,22122, "first comment")
-        val expected = PostNotFoundException::class
+        val comment = Comment(1546,1,1,22122, "second comment")
+        WallService.createComment(comment)
 
-        val result = WallService.createComment(comment)
 
-        assertEquals(expected, result)
     }
 }
