@@ -48,7 +48,7 @@ class WallServiceTest {
         WallService.add(post2)
 
         assertTrue(
-            WallService.remove(
+            WallService.removePost(
                 Post(
                     id = 2,
                     ownerId = 2,
@@ -83,7 +83,7 @@ class WallServiceTest {
         WallService.add(post2)
 
         assertFalse(
-            WallService.remove(
+            WallService.removePost(
                 Post(
                     id = 4,
                     ownerId = 2,
@@ -92,5 +92,26 @@ class WallServiceTest {
                 )
             )
         )
+    }
+
+    @Test
+    fun createComment_success() {
+        val comment = Comment(1,1,1,22122, "first comment")
+        val post = Post(
+            id = 1,
+            ownerId = 2,
+            postType = PostTypeEnum.POST,
+            postSource = PostSource(PostSourceTypeEnum.API, PlatformEnum.ANDROID, "ntlg.com", null)
+        )
+        WallService.add(post)
+        WallService.createComment(comment)
+
+        assertTrue(WallService.removeComment(comment))
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun createComment_shouldThrow() {
+        val comment = Comment(1,1,1,22122, "first comment")
+        WallService.createComment(comment)
     }
 }

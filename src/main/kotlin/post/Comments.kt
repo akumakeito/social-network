@@ -1,6 +1,6 @@
 package post
 
-data class Comment(
+data class Comments(
     val count: Int = 0,
     val canPost: Boolean,
     val groupsCanPost: Boolean,

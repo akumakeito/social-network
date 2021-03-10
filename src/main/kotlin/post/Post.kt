@@ -17,7 +17,7 @@ data class Post(
     val replyOwnerId : Int? = null,
     val replyPostId : Int? = null,
     val friendsOnly : Boolean? = null,
-    val comments : Comment? = null,
+    val comments : Comments? = null,
     val copyright : Copyright? = null,
     val reposts: Reposts? = null,
     val views: Views? = null,

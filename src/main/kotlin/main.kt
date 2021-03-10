@@ -43,4 +43,10 @@ fun main() {
 
     WallService.update(updatePost)
 
+    val comment1 = Comment(1,1,1,22122, "first comment")
+    val comment2 = Comment(1546,1,1,22122, "second comment")
+
+    WallService.createComment(comment1)
+    WallService.createComment(comment2)
+
 }
