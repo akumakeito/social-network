@@ -1,12 +1,13 @@
 package posts
 import Comment
+import CrudCommentService
 import CrudService
 import exceptions.CommentLengthTooSmallException
 import exceptions.CommentNotFoundException
 import exceptions.PostNotFoundException
 import posts.post.Post
 
-object WallService : CrudService<Post, Comment>{
+object WallService : CrudService<Post>, CrudCommentService<Comment>{
     var postId = 0L
     var commentId = 0L
     val postMap = mutableMapOf<Long, Post?>()

@@ -2,7 +2,7 @@ import exceptions.CommentLengthTooSmallException
 import exceptions.CommentNotFoundException
 import exceptions.NoteNotFoundException
 
-object NoteService : CrudService<Note, Comment> {
+object NoteService : CrudService<Note>, CrudCommentService<Comment> {
     var noteId = 0L
     var commentId = 0L
     val noteMap = mutableMapOf<Long, Note?>()
