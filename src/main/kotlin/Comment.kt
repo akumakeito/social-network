@@ -1,12 +1,19 @@
+import posts.ThreadComments
+
 data class Comment(
-    val postId : Int,
-    val id : Int,
-    val fromId : Int,
+    val entityId : Long,
+    val id : Long,
+    val fromId : Long,
     val date : Int,
     val text : String,
-    val replyToUser : Int? = null,
-    val replyToComment : Int? = null,
+    val delete : Boolean = false,
+    val replyToUser : Long? = null,
+    val replyToComment : Long? = null,
     val attachment: Attachment?= null,
     val parentsStack : ArrayList<Comment>? = null,
     val thread : ThreadComments? = null
-)
+) {
+    override fun toString(): String {
+        return text
+    }
+}
