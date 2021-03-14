@@ -74,10 +74,10 @@ class WallServiceTest {
         )
     }
 
-    @Test
+    @Test(expected = PostNotFoundException::class)
     fun edit_False() {
         val post1 = Post(
-            id = 0L,
+            id = 1L,
             ownerId = 1L,
             date = 15022021,
             text = "Hi, dad",
@@ -87,7 +87,7 @@ class WallServiceTest {
         )
 
         val post2 = Post(
-            id = 0L,
+            id = 2L,
             ownerId = 2L,
             date = 15022021,
             text = "Hi, mom",
@@ -97,9 +97,7 @@ class WallServiceTest {
         WallService.add(post1)
         WallService.add(post2)
 
-        assertFalse(
-            WallService.delete(1L)
-        )
+        WallService.delete(25L)
     }
 
     @Test
