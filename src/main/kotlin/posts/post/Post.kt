@@ -1,7 +1,7 @@
 package posts.post
 
 import Attachment
-import posts.enums.PostTypeEnum
+import enums.PostTypeEnum
 
 data class Post(
     val id : Long,

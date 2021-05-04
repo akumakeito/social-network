@@ -1,9 +1,9 @@
 import exceptions.PostNotFoundException
 import org.junit.After
 import posts.WallService
-import posts.enums.PlatformEnum
-import posts.enums.PostSourceTypeEnum
-import posts.enums.PostTypeEnum
+import enums.PlatformEnum
+import enums.PostSourceTypeEnum
+import enums.PostTypeEnum
 import posts.post.Post
 import posts.post.PostSource
 import org.junit.Assert.*

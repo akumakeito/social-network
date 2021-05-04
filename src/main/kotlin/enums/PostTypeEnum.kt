@@ -1,4 +1,4 @@
-package posts.enums
+package enums
 
 enum class PostTypeEnum {
     POST,

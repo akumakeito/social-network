@@ -1,4 +1,4 @@
-import posts.enums.AttachmentTypeEnum
+import enums.AttachmentTypeEnum
 
 data class DocAttachment(
     override val type: AttachmentTypeEnum = AttachmentTypeEnum.DOC,

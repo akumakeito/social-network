@@ -1,9 +1,5 @@
-import posts.WallService
-import posts.enums.PlatformEnum
-import posts.enums.PostSourceTypeEnum
-import posts.enums.PostTypeEnum
-import posts.post.Post
-import posts.post.PostSource
+import chat.Chat
+import chat.ChatService
 
 fun main() {
 //    val firstPost = Post(
@@ -49,5 +45,16 @@ fun main() {
 //
 //    WallService.addComment(comment1)
 //    WallService.addComment(comment2)
-
+//    val authorId = 13L
+//    val text = "text text"
+//    val chatId = 0L
+//
+//    ChatService.createMessage(authorId, text)
+//
+//    ChatService.createMessage(authorId, text, chatId)
+//   // ChatService.removeMessage(0)
+//
+//
+//
+//    println(ChatService.getMessages(authorId))
 }
