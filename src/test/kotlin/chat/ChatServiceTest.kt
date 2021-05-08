@@ -165,6 +165,31 @@ internal class ChatServiceTest {
     }
 
     @Test
+    fun getMessages() {
+        val authorId = 13L
+        val text = "text text"
+        val chatId = 0L
+        val message1 = Message(authorId, 0L, 0L, text)
+        val message2 = Message(authorId, 1L, 0L, text)
+        val message3 = Message(authorId, 2L, 0L, text)
+        val expected = listOf(
+            message1,
+            message2,
+            message3
+        )
+
+        ChatService.createMessage(authorId, text)
+
+        repeat(2) {
+            ChatService.createMessage(authorId, text, chatId)
+        }
+
+        val result = ChatService.getMessages(chatId)
+
+        assertEquals(expected, result)
+    }
+
+    @Test
     fun getChats_zero() {
         val authorId = 13L
         val expected = emptyList<Chat>()
