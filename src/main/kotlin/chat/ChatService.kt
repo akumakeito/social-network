@@ -57,15 +57,10 @@ object ChatService {
     }
 
     fun getUnreadChatsCount(userId: UserId): Int {
-        var unreadChatCount = 0
-        val userChats = chats.filter { it.userId == userId }
-        userChats.map { chat ->
-            if (chat.messagesList.last().id > chat.readMessages[userId] ?: 0) {
-                unreadChatCount++
-            }
-        }
-
-        return unreadChatCount
+       return chats.asSequence()
+            .filter { it.userId == userId }
+            .filter { it.messagesList.last().id > it.readMessages[userId] ?: 0 }
+            .count()
     }
 
     fun getChats(userId: UserId): List<Chat> {
@@ -73,10 +68,12 @@ object ChatService {
     }
 
     fun getMessages(chatId: Long): List<Message> {
-        return chats.filter { it.id == chatId }
+        return chats.asSequence()
+            .filter(){ it.id == chatId }
             .map {
                 it.messagesList
             }.flatten()
+            .toList()
     }
 
 
